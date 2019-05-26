@@ -1,0 +1,94 @@
+
+<html>
+ <head>
+   <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+   <style>
+* {
+  box-sizing: border-box;
+}
+
+
+.column {
+  float: left;
+  padding: 10px;
+  height: 300px; 
+}
+
+.left {
+  width: 40%;
+}
+
+.right {
+  width: 60%;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+#main {
+  left: 50%;
+position: absolute;
+}
+#p{
+  width: 30%;
+  font-size: 20px;
+}
+#button {
+  width: 200px;
+  height: 100px;
+  font-size: 30px;
+}
+#last {
+  opacity: 0;
+}
+</style>
+ <title>
+20
+ </title>
+</head>
+ 
+ <body>
+ <img src="" id="main">
+ 
+ <p id="p">Доброго времени бытия.Вас привествует система порционной подачи содержимого(кантента)
+  Когда будете готовы 
+ для того чтобы получить (следуйщую) порцию нажмите на кнопку "вперед".
+ Советую перед тем как начать процедуру присесть и продишаться, а так же -  не спешить.
+</p>
+<p id="last">А теперь, если вы еще выжили после полученных порций, вы можете получить последнюю (супермега ультра ласт)
+фатальную убийстенную порцию перейдя по <a href="https://youtu.be/diuB2HrDUP4">ссылке</a></p>
+<button id="button">Вперед</button>
+ <script type="text/javascript">
+  var arr = ['zelya1.jpg','zelya2.jpg','zahar1.jpg','zahar2.jpg','vanya1.jpg','oleynik.jpg','bodya.jpg','styopa.jpg','papich.jpg','alex.jpg']
+  console.log(arr)
+   var main = document.getElementById('main');
+   var button = document.getElementById('button');
+   var last = $('#last');
+   console.log(last[0].style)
+
+   var i = 0;
+  function iteration () {
+    main.src = arr[i];
+    i++;
+    console.log(i)
+  }
+  button.onclick = function  () {
+    if (i < 10){
+    main.src = arr[i];
+    i++;
+  }if (i == 10) {
+    main.src = '';
+last[0].style.opacity = 1;
+  }
+
+  }
+  
+
+ </script>
+ </body>
+</html>
